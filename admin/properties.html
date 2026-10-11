@@ -17,7 +17,7 @@
     })();
   </script>
 
-  <link rel="icon" href="../public/assets/img/logo.png">
+  <link rel="icon" href="../assets/img/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -37,7 +37,7 @@
     <!-- ============ SIDEBAR ============ -->
     <aside class="sidebar" id="sidebar">
       <a href="index.html" class="sidebar-brand">
-        <img src="../public/assets/img/logo.png" alt="IHAM logo">
+        <img src="../assets/img/logo.png" alt="IHAM logo">
         <span>
           <strong>Institute of Housing Administration</strong>
           <small>Admin Panel</small>
@@ -103,7 +103,7 @@
             <i class="fa-regular fa-bell"></i>
             <span class="dot"></span>
           </button>
-          <a href="../public/index.html" class="icon-btn" target="_blank" rel="noopener"
+          <a href="../index.html" class="icon-btn" target="_blank" rel="noopener"
             aria-label="View the public website" title="View the public website">
             <i class="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
@@ -174,7 +174,7 @@
   <script src="../shared/theme.js"></script>
   <script src="assets/js/admin-data.js"></script>
   <script src="assets/js/admin.js"></script>
-  <script src="../public/assets/js/data.js"></script>
+  <script src="../assets/js/data.js"></script>
   <script>
     (function () {
       var A = window.Admin;
@@ -202,7 +202,7 @@
           .map(function (p) {
             return "<tr>" +
               '<td><div class="cell-main">' +
-                '<img class="cell-thumb" src="../public/' + p.images[0] + '" alt="">' +
+                '<img class="cell-thumb" src="../' + p.images[0] + '" alt="">' +
                 '<div class="cell-text"><strong>' + A.esc(p.title) + "</strong>" +
                 "<small>" + A.esc(p.id) + "</small></div></div></td>" +
               '<td><span class="badge-soft ' + (p.track === "land" ? "land" : "info") + '">' +

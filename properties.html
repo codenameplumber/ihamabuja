@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Land Investment — IHAM</title>
+  <title>Properties For Sale — IHAM</title>
   <meta name="description"
-    content="Dry, surveyed and fenced investment plots on the Abuja and Lagos growth corridors, with interest-free payment plans.">
+    content="Verified residential and commercial property for sale across Abuja and Lagos, with registry-checked title.">
 
   <script>
     (function () {
@@ -26,7 +26,7 @@
     rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="../shared/theme.css">
+  <link rel="stylesheet" href="shared/theme.css">
   <link rel="stylesheet" href="assets/css/site.css">
 </head>
 
@@ -44,8 +44,8 @@
 
       <nav class="main-nav" id="mainNav">
         <a href="index.html">Home</a>
-        <a href="properties.html">Properties</a>
-        <a href="land-investment.html" class="active">Land Investment</a>
+        <a href="properties.html" class="active">Properties</a>
+        <a href="land-investment.html">Land Investment</a>
         <a href="training.html">Training</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
@@ -65,113 +65,92 @@
   </header>
 
   <section class="page-banner">
-    <img class="banner-bg" src="assets/img/land-property.jpg" alt="">
+    <img class="banner-bg" src="assets/img/residential-property.jpg" alt="">
     <div class="shell">
-      <div class="crumbs"><a href="index.html">Home</a> / Land Investment</div>
-      <h1>Land investment</h1>
+      <div class="crumbs"><a href="index.html">Home</a> / Properties</div>
+      <h1>Property for sale</h1>
       <p class="mb-0" style="color: rgba(255,255,255,.74); max-width: 620px">
-        Buying land to hold is a different decision from buying a house to live in — different
-        checklist, different time horizon. Looking for a home instead?
-        <a href="properties.html">See properties</a>.
+        Homes and commercial buildings with title verified at the registry before listing. Looking
+        for plots instead? <a href="land-investment.html">See land investment</a>.
       </p>
     </div>
   </section>
 
-  <!-- Why land -->
-  <section class="section" style="padding-bottom: 0">
-    <div class="shell">
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-3" data-reveal>
-          <div class="trust-card">
-            <div class="ico"><i class="fa-solid fa-droplet-slash"></i></div>
-            <h3>100% dry land</h3>
-            <p>No reclamation, no flood history. We walk the site with you in the rainy season if you ask.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3" data-reveal>
-          <div class="trust-card">
-            <div class="ico"><i class="fa-solid fa-file-contract"></i></div>
-            <h3>Clean, transferable title</h3>
-            <p>Registered survey and deed of assignment issued in your name on completion of payment.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3" data-reveal>
-          <div class="trust-card">
-            <div class="ico"><i class="fa-solid fa-calendar-days"></i></div>
-            <h3>0% interest plans</h3>
-            <p>Spread over 12 to 18 months. Nothing is added on top — the plan price is the cash price.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3" data-reveal>
-          <div class="trust-card">
-            <div class="ico"><i class="fa-solid fa-location-crosshairs"></i></div>
-            <h3>Immediate allocation</h3>
-            <p>Your specific plot is pegged and allocated the moment payment completes. No waiting list.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Listings -->
   <section class="section">
     <div class="shell">
-      <div class="section-head center" data-reveal>
-        <span class="eyebrow">Open Estates</span>
-        <h2>Plots available now</h2>
-        <p>Every estate below is fenced, surveyed and ready for allocation.</p>
+
+      <!-- Filter bar -->
+      <div class="surface p-3 p-md-4 mb-5">
+        <form class="row g-3 align-items-end" onsubmit="return false">
+          <div class="col-lg-4 col-md-6">
+            <label class="form-label" for="fSearch">Search</label>
+            <input type="text" class="form-control" id="fSearch" placeholder="Title or location…">
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <label class="form-label" for="fLocation">Location</label>
+            <select class="form-select" id="fLocation">
+              <option value="">Anywhere</option>
+              <option>Abuja</option>
+              <option>Lagos</option>
+            </select>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <label class="form-label" for="fBudget">Budget</label>
+            <select class="form-select" id="fBudget">
+              <option value="">Any budget</option>
+              <option value="0-50">Under ₦50m</option>
+              <option value="50-100">₦50m – ₦100m</option>
+              <option value="100+">Above ₦100m</option>
+            </select>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <button class="btn btn-ghost w-100" type="reset">
+              <i class="fa-solid fa-rotate-left me-1"></i> Reset
+            </button>
+          </div>
+        </form>
       </div>
 
-      <div class="row g-4" data-property-grid data-track="land"></div>
+      <!-- Grid: fixed to the property track so land never appears here -->
+      <div class="row g-4" data-property-grid data-track="property"></div>
+
+      <!-- Pagination (design stage) -->
+      <nav class="mt-5" aria-label="Property listing pages">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </nav>
+
     </div>
   </section>
 
-  <!-- How it works -->
+  <!-- CTA -->
   <section class="section section-sunken">
     <div class="shell">
-      <div class="row g-5 align-items-center">
-        <div class="col-lg-5" data-reveal>
-          <div class="section-head mb-0">
-            <span class="eyebrow">How It Works</span>
-            <h2>From first call to title in your hand.</h2>
-            <p>Four steps, no surprises in between.</p>
-          </div>
-        </div>
-
-        <div class="col-lg-7" data-reveal>
-          <div class="step-row">
-            <div class="num">1</div>
-            <div>
-              <h4>Book a free site inspection</h4>
-              <p>Pick a date and time on any listing. We meet you at the estate — bring your surveyor or solicitor.</p>
-            </div>
-          </div>
-          <div class="step-row">
-            <div class="num">2</div>
-            <div>
-              <h4>Choose your plot and payment plan</h4>
-              <p>Pay outright or spread it over 12 to 18 months. Your plot is reserved from the first instalment.</p>
-            </div>
-          </div>
-          <div class="step-row">
-            <div class="num">3</div>
-            <div>
-              <h4>Allocation and pegging</h4>
-              <p>On completion we peg your exact plot with you present and issue the allocation letter.</p>
-            </div>
-          </div>
-          <div class="step-row">
-            <div class="num">4</div>
-            <div>
-              <h4>Documentation</h4>
-              <p>Registered survey and deed of assignment prepared in your name and handed over.</p>
-            </div>
+      <div class="training-panel">
+        <div class="inner text-center">
+          <span class="eyebrow justify-content-center">Cannot find it?</span>
+          <h2>Tell us what you are looking for.</h2>
+          <p class="mx-auto" style="max-width: 560px">
+            Not everything we hold is listed publicly. Send us your brief and budget and we will come
+            back with what is available off-market.
+          </p>
+          <div class="d-flex flex-wrap gap-2 justify-content-center mt-4">
+            <a href="contact.html" class="btn btn-primary btn-lg">Send Your Brief</a>
+            <a href="#" data-wa-link target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+              <i class="fa-brands fa-whatsapp me-2"></i> Chat on WhatsApp
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
-
+  
+ 
   <footer class="site-footer">
     <div class="shell">
       <div class="row g-4">
@@ -218,7 +197,7 @@
         <div class="col-lg-4">
           <h4>Get In Touch</h4>
           <ul class="footer-links">
-            <li><i class="fa-solid fa-location-dot me-2"></i>1st Avenue,plot 64,C close,Qwarimpa,Abuja</li>
+            <li><i class="fa-solid fa-location-dot me-2"></i>1st Avenue,plot 64,C close,Gwarimpa,Abuja</li>
             <li><i class="fa-solid fa-location-dot me-2"></i>SUITE C11, MIDLAND HOUSE, 521 ROAD, 5TH AVENUE, GWARIMPA, ABUJA</li>
             <li><i class="fa-solid fa-location-dot me-2"></i>No. 10, kelvine court,woodland Grove,Isleworth,London TW7 6NT</li>
             <li><i class="fa-brands fa-whatsapp"></i> +234 9067871178</li>
@@ -235,7 +214,7 @@
         <span>
           <a href="#">Privacy Policy</a> &nbsp;·&nbsp;
           <a href="#">Terms of Service</a> &nbsp;·&nbsp;
-          <a href="../admin/login.html">Admin</a>
+          <a href="admin/login.html">Admin</a>
         </span>
       </div>
     </div>
@@ -246,7 +225,7 @@
   </a>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../shared/theme.js"></script>
+  <script src="shared/theme.js"></script>
   <script src="assets/js/data.js"></script>
   <script src="assets/js/site.js"></script>
 </body>
